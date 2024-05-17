@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">calculator0ffood</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_today">Сегодня</string>
+    <string name="title_history">История</string>
+    <string name="title_profile">Профиль</string>
+    <string name="breakfast">Завтрак</string>
+    <string name="dinner">Обед</string>
+    <string name="supper">Ужин</string>
+    <string name="snack">Перекусы</string>
+    <string name="email">Введите ваш email</string>
+    <string name="fio">Введите ваше ФИО</string>
+    <string name="birthsday">Введите вашу дату рождения</string>
+    <string name="your_weight">Введите ваш вес</string>
+    <string name="your_height">Введите ваш рост</string>
+</resources>

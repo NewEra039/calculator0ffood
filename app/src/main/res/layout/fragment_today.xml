@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://.androschemasmaid.com/apk/res-auto"
+    xmlns:tools="http://sches.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/upper_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#00BB00">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:id="@+id/nowDate"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:textSize="14sp"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="40dp"
+            android:id="@+id/time"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/upper_bg"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="-80dp"
+        android:background="@color/white">
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/zavtrak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#00BB00"
+        android:text="@string/breakfast"/>
+
+    <Button
+        android:id="@+id/obed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zavtrak"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00BB00"
+        android:text="@string/dinner"/>
+
+    <Button
+        android:id="@+id/ujin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/obed"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00BB00"
+        android:text="@string/supper"/>
+
+    <Button
+        android:id="@+id/perekus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ujin"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00BB00"
+        android:text="@string/snack"/>
+
+
+</RelativeLayout>
