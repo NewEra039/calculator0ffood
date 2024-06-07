@@ -13,26 +13,41 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.calculator0ffood.R;
+import com.example.calculator0ffood.databinding.FragmentRegisterBinding;
 
 public class RegisterFragment extends Fragment {
 
-    private RegisterViewModel mViewModel;
+    private RegisterViewModel loginRegisterViewModel;
+    private FragmentRegisterBinding binding;
 
-    public static RegisterFragment newInstance() {
-        return new RegisterFragment();
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        loginRegisterViewModel =
+                new ViewModelProvider(this).get(RegisterViewModel.class);
+        binding = FragmentRegisterBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        binding.fragmentLoginregisterRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginRegisterViewModel.register(binding.fragmentLoginregisterEmail.getText().toString(),
+                        binding.fragmentLoginregisterPassword.getText().toString());
+            }
+        });
+        binding.fragmentLoginregisterLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginRegisterViewModel.login(binding.fragmentLoginregisterEmail.getText().toString(),
+                        binding.fragmentLoginregisterPassword.getText().toString());
+            }
+        });
+        return root;
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_register, container, false);
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
-        // TODO: Use the ViewModel
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
 }

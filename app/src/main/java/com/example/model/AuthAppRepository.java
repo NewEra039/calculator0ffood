@@ -1,12 +1,14 @@
 package com.example.model;
 
 import android.app.Application;
+import android.content.Intent;
 import android.os.Build;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.calculator0ffood.ui.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -40,6 +42,9 @@ public class AuthAppRepository {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 userLiveData.postValue(firebaseAuth.getCurrentUser());
+                                Intent intent=new Intent(application.getApplicationContext(), MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                application.getApplicationContext().startActivity(intent);
                             } else {
                                 Toast.makeText(application.getApplicationContext(), "Login Failure: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
@@ -56,6 +61,7 @@ public class AuthAppRepository {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 userLiveData.postValue(firebaseAuth.getCurrentUser());
+                                Toast.makeText(application.getApplicationContext(), "Registration Success", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(application.getApplicationContext(), "Registration Failure: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

@@ -13,26 +13,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.calculator0ffood.R;
+import com.example.calculator0ffood.databinding.FragmentLoginBinding;
 
 public class LoginFragment extends Fragment {
 
-    private LoginViewModel mViewModel;
-
-    public static LoginFragment newInstance() {
-        return new LoginFragment();
-    }
-
+    private LoginViewModel loggedInViewModel;
+    private FragmentLoginBinding binding;
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_login, container, false);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        loggedInViewModel =
+                new ViewModelProvider(this).get(LoginViewModel.class);
+        binding = FragmentLoginBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
+        return root;
+    }
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-        // TODO: Use the ViewModel
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
 }
