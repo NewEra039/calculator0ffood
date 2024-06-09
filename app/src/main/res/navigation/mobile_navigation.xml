@@ -7,19 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.calculator0ffood.ui.home.HomeFragment"
+        android:name="com.example.calculator0ffood.ui.history.HistoryFragment"
         android:label="title_home"
         tools:layout="@layout/fragment_today" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.calculator0ffood.ui.dashboard.DashboardFragment"
+        android:name="com.example.calculator0ffood.ui.today.TodayFragment"
         android:label="title_dashboard"
         tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.calculator0ffood.ui.notifications.NotificationsFragment"
+        android:name="com.example.calculator0ffood.ui.profile.ProfileFragment"
         android:label="title_notifications"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_eat"
+        android:name="com.example.calculator0ffood.ui.eat.EatFragment"
+        android:label="title_eat"
+        tools:layout="@layout/fragment_eat"
+        />
 </navigation>

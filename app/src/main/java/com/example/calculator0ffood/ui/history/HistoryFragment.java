@@ -1,23 +1,22 @@
-package com.example.calculator0ffood.ui.home;
+package com.example.calculator0ffood.ui.history;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.calculator0ffood.databinding.FragmentHistoryBinding;
 
-public class HomeFragment extends Fragment {
+public class HistoryFragment extends Fragment {
 
 private FragmentHistoryBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        HistoryViewModel homeViewModel =
+                new ViewModelProvider(this).get(HistoryViewModel.class);
 
     binding = FragmentHistoryBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
