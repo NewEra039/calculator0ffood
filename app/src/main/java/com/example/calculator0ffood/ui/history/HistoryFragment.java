@@ -18,10 +18,10 @@ private FragmentHistoryBinding binding;
         HistoryViewModel homeViewModel =
                 new ViewModelProvider(this).get(HistoryViewModel.class);
 
-    binding = FragmentHistoryBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
+        binding = FragmentHistoryBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
-    return root;
+        return root;
     }
 
 @Override

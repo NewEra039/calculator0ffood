@@ -14,17 +14,24 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class AuthAppRepository {
     private Application application;
-
     private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference dbRef;
     private MutableLiveData<FirebaseUser> userLiveData;
     private MutableLiveData<Boolean> loggedOutLiveData;
 
     public AuthAppRepository(Application application) {
         this.application = application;
         this.firebaseAuth = FirebaseAuth.getInstance();
+        this.firebaseDatabase=FirebaseDatabase.getInstance();
+        dbRef=this.firebaseDatabase.getReference("users");
         this.userLiveData = new MutableLiveData<>();
         this.loggedOutLiveData = new MutableLiveData<>();
 
@@ -62,6 +69,7 @@ public class AuthAppRepository {
                             if (task.isSuccessful()) {
                                 userLiveData.postValue(firebaseAuth.getCurrentUser());
                                 Toast.makeText(application.getApplicationContext(), "Registration Success", Toast.LENGTH_SHORT).show();
+                                dbRef.child(firebaseAuth.getCurrentUser().getUid().toString()).setValue(firebaseAuth.getCurrentUser().getEmail());
                             } else {
                                 Toast.makeText(application.getApplicationContext(), "Registration Failure: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

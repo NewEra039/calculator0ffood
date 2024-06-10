@@ -8,24 +8,25 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.calculator0ffood.ui.history.HistoryFragment"
-        android:label="title_home"
         tools:layout="@layout/fragment_today" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.calculator0ffood.ui.today.TodayFragment"
-        android:label="title_dashboard"
         tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.calculator0ffood.ui.profile.ProfileFragment"
-        android:label="title_notifications"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/navigation_eat"
-        android:name="com.example.calculator0ffood.ui.eat.EatFragment"
-        android:label="title_eat"
+        android:name="com.example.calculator0ffood.ui.eat.EatListFragment"
         tools:layout="@layout/fragment_eat"
+        />
+    <fragment
+        android:id="@+id/navigation_eatAdd"
+        android:name="com.example.calculator0ffood.ui.eat.AddEatFragment"
+        tools:layout="@layout/fragment_add_eat"
         />
 </navigation>

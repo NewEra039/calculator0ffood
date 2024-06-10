@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "1086260126816",
-    "project_id": "calculator0ffood",
-    "storage_bucket": "calculator0ffood.appspot.com"
+    "project_number": "923639412261",
+    "firebase_url": "https://calculator0ffood-aa499-default-rtdb.firebaseio.com",
+    "project_id": "calculator0ffood-aa499",
+    "storage_bucket": "calculator0ffood-aa499.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1086260126816:android:e0d0a18896809943e3cf05",
+        "mobilesdk_app_id": "1:923639412261:android:f08f27e3f9fad7cbe171cc",
         "android_client_info": {
           "package_name": "com.example.calculator0ffood"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDicPAO5B0HZsta4gNWe3p88j_uAsloLDk"
+          "current_key": "AIzaSyAGxTSym9kfzD2AUfiHXpZsnvYuWt47o-c"
         }
       ],
       "services": {

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.eat.EatFragment">
+    tools:context=".ui.eat.EatListFragment">
 
     <!-- TODO: Update blank fragment layout -->
    <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -12,7 +12,8 @@
        android:layout_gravity="bottom|right"
        android:src="@android:drawable/btn_star"
        android:layout_marginBottom="100dp"
-       android:layout_marginRight="20dp"/>
+       android:layout_marginRight="20dp"
+       android:id="@+id/fabAddEat"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

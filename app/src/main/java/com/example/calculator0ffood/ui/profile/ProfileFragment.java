@@ -20,9 +20,9 @@ private FragmentProfileBinding binding;
         ProfileViewModel notificationsViewModel =
                 new ViewModelProvider(this).get(ProfileViewModel.class);
 
-    binding = FragmentProfileBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
-    return root;
+        binding = FragmentProfileBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        return root;
 }
 
 @Override

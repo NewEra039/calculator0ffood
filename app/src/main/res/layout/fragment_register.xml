@@ -20,8 +20,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-
-        android:hint="123456" />
+        android:text="123456"
+        android:hint="Password" />
 
     <Button
         android:id="@+id/fragment_loginregister_login"
