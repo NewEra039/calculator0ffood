@@ -12,6 +12,7 @@ import androidx.navigation.Navigation;
 
 import com.example.calculator0ffood.R;
 import com.example.calculator0ffood.databinding.FragmentTodayBinding;
+import com.example.model.TypeOfEat;
 
 public class TodayFragment extends Fragment {
     private NavController navController;
@@ -28,28 +29,35 @@ public class TodayFragment extends Fragment {
         binding.zavtrak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               navController.navigate(R.id.navigation_eat);
+               Bundle bundle = new Bundle();
+               bundle.putString("type",TypeOfEat.breakfast.toString());
+               navController.navigate(R.id.navigation_eat,bundle);
             }
         });
         binding.obed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Bundle bundle = new Bundle();
+                bundle.putString("type",TypeOfEat.dinner.toString());
+                navController.navigate(R.id.navigation_eat,bundle);
             }
         });
         binding.ujin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Bundle bundle = new Bundle();
+                bundle.putString("type",TypeOfEat.supper.toString());
+                navController.navigate(R.id.navigation_eat,bundle);
             }
         });
         binding.perekus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Bundle bundle = new Bundle();
+                bundle.putString("type",TypeOfEat.snack.toString());
+                navController.navigate(R.id.navigation_eat,bundle);
             }
         });
-        //  dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

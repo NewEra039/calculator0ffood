@@ -12,10 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="#00BB00">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History"/>
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:id="@+id/history"
         android:layout_below="@+id/upper_bg"
         />

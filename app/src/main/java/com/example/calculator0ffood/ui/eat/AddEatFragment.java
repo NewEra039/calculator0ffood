@@ -25,13 +25,16 @@ public class AddEatFragment extends Fragment {
         eatViewModel = new ViewModelProvider(this).get(EatViewModel.class);
         binding = FragmentAddEatBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        String arg1Value = getArguments().getString("type");
-        binding.tvTypeOfEat.setText(arg1Value);
+        if(getArguments()!=null)
+        {
+            String arg1Value = getArguments().getString("type");
+            binding.tvTypeOfEat.setText(arg1Value);
+        }
         binding.buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                eatViewModel.addEat(new Eat(new Date(),
-                        TypeOfEat.breakfast,
+
+                eatViewModel.addEat(new Eat(TypeOfEat.breakfast,new Date(),
                         binding.nameEat.getText().toString(),
                         Double.parseDouble(binding.protein.getText().toString()),
                                 Double.parseDouble(binding.fat.getText().toString()),

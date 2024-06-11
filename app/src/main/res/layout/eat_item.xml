@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <EditText
+    <TextView
         android:id="@+id/editTextDishName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,35 +17,39 @@
         android:layout_below="@id/editTextDishName"
         android:orientation="horizontal">
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Белки:"
+            android:id="@+id/proteinView"
             android:padding="16dp"
             android:textSize="14sp" />
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Жиры:"
+            android:id="@+id/fatView"
             android:padding="16dp"
             android:textSize="14sp" />
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Углеводы:"
+            android:id="@+id/farbsView"
             android:padding="16dp"
             android:textSize="14sp" />
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Калории:"
+            android:id="@+id/coloryView"
             android:padding="16dp"
             android:textSize="14sp" />
     </LinearLayout>

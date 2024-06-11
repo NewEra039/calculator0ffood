@@ -3,30 +3,23 @@ package com.example.model;
 import java.util.Date;
 
 public class Eat {
-    private Date date;
     private TypeOfEat typeOfEat;
+    private Date date;
     private String name;
     private double protein;
     private double fat;
     private double carbs;
     private double calories;
+    public Eat(){}
 
-    public Eat(Date date,TypeOfEat typeOfEat, String name, double protein, double fat, double carbs, double calories) {
-        this.date=date;
-        this.typeOfEat=typeOfEat;
+    public Eat(TypeOfEat typeOfEat, Date date, String name, double protein, double fat, double carbs, double calories) {
+        this.typeOfEat = typeOfEat;
+        this.date = date;
         this.name = name;
         this.protein = protein;
         this.fat = fat;
         this.carbs = carbs;
         this.calories = calories;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public TypeOfEat getTypeOfEat() {
@@ -35,6 +28,14 @@ public class Eat {
 
     public void setTypeOfEat(TypeOfEat typeOfEat) {
         this.typeOfEat = typeOfEat;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getName() {
