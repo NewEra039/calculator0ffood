@@ -25,6 +25,7 @@ public class AuthAppRepository {
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference dbRef;
+    private DatabaseReference dbRefProfile;
     private MutableLiveData<FirebaseUser> userLiveData;
     private MutableLiveData<Boolean> loggedOutLiveData;
 
@@ -33,6 +34,7 @@ public class AuthAppRepository {
         this.firebaseAuth = FirebaseAuth.getInstance();
         this.firebaseDatabase=FirebaseDatabase.getInstance();
         dbRef=this.firebaseDatabase.getReference("users");
+        dbRefProfile=this.firebaseDatabase.getReference("profiles");
         this.userLiveData = new MutableLiveData<>();
         this.loggedOutLiveData = new MutableLiveData<>();
 
@@ -73,7 +75,7 @@ public class AuthAppRepository {
                                 dbRef.child(firebaseAuth.getCurrentUser().getUid().toString()).setValue(firebaseAuth.getCurrentUser().getEmail());
                                 User user=new User(firebaseAuth.getCurrentUser().getEmail(),
                                         "",new Date(0,0,0),0,0);
-                                dbRef.child("profile").setValue(user);
+                                dbRefProfile.child(firebaseAuth.getCurrentUser().getUid()).setValue(user);
 
                             } else {
                                 Toast.makeText(application.getApplicationContext(), "Registration Failure: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

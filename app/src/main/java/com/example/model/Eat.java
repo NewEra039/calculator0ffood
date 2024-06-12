@@ -39,7 +39,6 @@ public class Eat {
     public void setDate(Date date) {
         this.date = date;
     }
-
     public String getName() {
         return name;
     }
