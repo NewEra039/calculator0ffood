@@ -30,11 +30,22 @@ public class AddEatFragment extends Fragment {
         if(getArguments()!=null)
         {
             String typeOfEat = getArguments().getString("type");
-            binding.tvTypeOfEat.setText(typeOfEat);
-            if(typeOfEat.equals("breakfast")) type=TypeOfEat.breakfast;
-            else if(typeOfEat.equals("dinner")) type=TypeOfEat.dinner;
-            else if(typeOfEat.equals("supper")) type=TypeOfEat.supper;
-            else type=TypeOfEat.snack;
+            if(typeOfEat.equals("breakfast")) {
+                type=TypeOfEat.breakfast;
+                binding.tvTypeOfEat.setText("Завтрак");
+            }
+            else if(typeOfEat.equals("dinner")){
+                type=TypeOfEat.dinner;
+                binding.tvTypeOfEat.setText("Обед");
+            }
+            else if(typeOfEat.equals("supper")) {
+                type=TypeOfEat.supper;
+                binding.tvTypeOfEat.setText("Ужин");
+            }
+            else {
+                type=TypeOfEat.snack;
+                binding.tvTypeOfEat.setText("Перекус");
+            }
         }
         binding.buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
