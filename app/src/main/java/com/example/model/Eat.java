@@ -1,6 +1,8 @@
 package com.example.model;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Eat {
     private TypeOfEat typeOfEat;

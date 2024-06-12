@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class AuthAppRepository {
@@ -70,6 +71,10 @@ public class AuthAppRepository {
                                 userLiveData.postValue(firebaseAuth.getCurrentUser());
                                 Toast.makeText(application.getApplicationContext(), "Registration Success", Toast.LENGTH_SHORT).show();
                                 dbRef.child(firebaseAuth.getCurrentUser().getUid().toString()).setValue(firebaseAuth.getCurrentUser().getEmail());
+                                User user=new User(firebaseAuth.getCurrentUser().getEmail(),
+                                        "",new Date(0,0,0),0,0);
+                                dbRef.child("profile").setValue(user);
+
                             } else {
                                 Toast.makeText(application.getApplicationContext(), "Registration Failure: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

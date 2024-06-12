@@ -21,7 +21,8 @@ public class EatAdapter extends RecyclerView.Adapter<EatAdapter.ViewHolder>
     private List<Eat> eats;
     public EatAdapter(@NonNull Context context, List<Eat> list) {
         this.eats=list;
-        if(context!=null) this.inflater=LayoutInflater.from(context);
+        if(context!=null)
+            this.inflater=LayoutInflater.from(context);
     }
     @NonNull
     @Override

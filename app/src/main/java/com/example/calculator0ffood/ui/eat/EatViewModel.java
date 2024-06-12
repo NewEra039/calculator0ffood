@@ -58,7 +58,7 @@ public class EatViewModel extends AndroidViewModel {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     Eat eat=postSnapshot.getValue(Eat.class);
                     if(typeOfEat==eat.getTypeOfEat()&&date.getDate()==eat.getDate().getDate()&&
-                    date.getMonth()==eat.getDate().getMonth()&&date.getYear()==eat.getDate().getYear())
+                    date.getMonth()==eat.getDate().getMonth() &&date.getYear()==eat.getDate().getYear())
                         list.add(eat);
                 }
                 eatList.setValue(list);

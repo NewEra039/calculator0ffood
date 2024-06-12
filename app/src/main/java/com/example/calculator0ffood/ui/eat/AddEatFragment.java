@@ -13,11 +13,13 @@ import com.example.model.Eat;
 import com.example.model.TypeOfEat;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 public class AddEatFragment extends Fragment {
     private FragmentAddEatBinding binding;
     private EatViewModel eatViewModel;
+    private TypeOfEat type;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,14 +29,18 @@ public class AddEatFragment extends Fragment {
         View root = binding.getRoot();
         if(getArguments()!=null)
         {
-            String arg1Value = getArguments().getString("type");
-            binding.tvTypeOfEat.setText(arg1Value);
+            String typeOfEat = getArguments().getString("type");
+            binding.tvTypeOfEat.setText(typeOfEat);
+            if(typeOfEat.equals("breakfast")) type=TypeOfEat.breakfast;
+            else if(typeOfEat.equals("dinner")) type=TypeOfEat.dinner;
+            else if(typeOfEat.equals("supper")) type=TypeOfEat.supper;
+            else type=TypeOfEat.snack;
         }
         binding.buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                eatViewModel.addEat(new Eat(TypeOfEat.breakfast,new Date(),
+                Date date=new Date(new Date().getYear(),new Date().getMonth(),new Date().getDate());
+                eatViewModel.addEat(new Eat(type,date,
                         binding.nameEat.getText().toString(),
                         Double.parseDouble(binding.protein.getText().toString()),
                                 Double.parseDouble(binding.fat.getText().toString()),
