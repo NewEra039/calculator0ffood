@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://.androschemasmaid.com/apk/res-auto"
     xmlns:tools="http://sches.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/bg"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/upper_bg"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:background="#00BB00">
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,6 +24,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerInParent="true"
+            android:src="@drawable/common_full_open_on_phone"
             app:civ_border_width="2dp"
             app:civ_border_color="#FF000000"/>
     </RelativeLayout>
@@ -27,6 +34,8 @@
         android:layout_below="@+id/upper_bg"
         android:layout_marginTop="20dp"
         android:hint="@string/email"
+        android:enabled="false"
+        android:id="@+id/user_email"
         android:inputType="textEmailAddress" />
     <EditText
         android:layout_width="match_parent"
@@ -34,26 +43,32 @@
         android:layout_below="@+id/upper_bg"
         android:layout_marginTop="80dp"
         android:hint="@string/fio"
+        android:id="@+id/user_fio"
         android:inputType="textEmailAddress" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/upper_bg"
-        android:layout_marginTop="140dp"
-        android:hint="@string/birthsday"
-        android:inputType="textEmailAddress" />
+        android:layout_marginTop="130dp"
+        android:id="@+id/user_weight"
+        android:hint="@string/your_weight"
+        android:inputType="number" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/upper_bg"
         android:layout_marginTop="200dp"
-        android:hint="@string/your_weight"
-        android:inputType="textEmailAddress" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/upper_bg"
-        android:layout_marginTop="260dp"
         android:hint="@string/your_height"
-        android:inputType="textEmailAddress" />
+        android:id="@+id/user_height"
+        android:inputType="number" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:id="@+id/save_button"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/user_height"/>
 </RelativeLayout>
+</ScrollView>

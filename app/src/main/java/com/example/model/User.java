@@ -1,22 +1,23 @@
 package com.example.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class User
 {
     private String email;
     private String fio;
-    private Date birthDay;
     private double weight;
     private double height;
-    public User(String email, String fio, Date birthDay, double weight, double height) {
+    private String foto;
+    public User(String email, String fio,double weight, double height,String foto) {
         this.email = email;
         this.fio = fio;
-        this.birthDay = birthDay;
         this.weight = weight;
         this.height = height;
+        this.foto=foto;
     }
-    public User(){}
+    public User(){
+    }
     public String getEmail() {
         return email;
     }
@@ -29,12 +30,6 @@ public class User
     public void setFio(String fio) {
         this.fio = fio;
     }
-    public Date getBirthDay() {
-        return birthDay;
-    }
-    public void setBirthDay(Date birthDay) {
-        this.birthDay = birthDay;
-    }
     public double getWeight() {
         return weight;
     }
@@ -46,5 +41,13 @@ public class User
     }
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

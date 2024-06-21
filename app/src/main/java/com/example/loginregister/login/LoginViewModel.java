@@ -8,7 +8,12 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.model.AuthAppRepository;
+import com.example.model.User;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginViewModel extends AndroidViewModel {
     private AuthAppRepository authAppRepository;
@@ -29,5 +34,11 @@ public class LoginViewModel extends AndroidViewModel {
 
     public MutableLiveData<Boolean> getLoggedOutLiveData() {
         return loggedOutLiveData;
+    }
+    public void SaveData(User user) {
+        authAppRepository.SaveUser(user);
+    }
+    public MutableLiveData<User> getUser(){
+       return authAppRepository.getUser();
     }
 }

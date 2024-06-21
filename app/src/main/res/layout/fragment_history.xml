@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/upper_bg"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:background="#00BB00">
         <TextView
             android:layout_width="wrap_content"
